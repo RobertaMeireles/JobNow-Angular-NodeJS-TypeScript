@@ -1,0 +1,22 @@
+<!------LIST APPLY-------->
+    <div *ngIf="showResults; else not">
+        <main class="container container-form-position">
+            <h1 class="title1">Applicants</h1>
+            <table>
+                <tbody> 
+                    <tr *ngFor="let item of beResults">
+                        <td><a [routerLink]="['/consult',item['id']]">{{item['email']}}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <ng-template #not>
+        <main class="container container-form-position">
+            <h1 class="title1">Applicants</h1>
+            <p class="title1"> No one applied yet!</p>
+        </main>
+    </ng-template>
+
+

@@ -1,0 +1,16 @@
+<!----SEARCH-POSITION------->
+ <app-search-position (searchHit)="receiveSearchResults($event)"></app-search-position>
+
+
+ <div *ngIf="positions"  class="container">
+    <table>
+        <tbody> 
+            <tr *ngFor="let item of positions">
+                <td><a [routerLink]="['/details-position',
+                    item.id]">{{item.name}}</a></td>
+                <td>{{item.title}}</td>
+                <td>{{item.city}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
